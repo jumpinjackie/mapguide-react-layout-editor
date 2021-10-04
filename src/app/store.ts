@@ -1,7 +1,8 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { EditorAction } from '../actions/editor-actions';
 import { appDefReducer } from '../reducers/app-def';
 
-export const store = configureStore({
+export const store = configureStore<any, EditorAction>({
   reducer: {
     appDef: appDefReducer
   }
