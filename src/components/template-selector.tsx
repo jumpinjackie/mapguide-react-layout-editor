@@ -24,7 +24,7 @@ export const TemplateSelector = () => {
     return <Card>
         <h5 className="bp3-heading">Select Template</h5>
         <div>
-            {TEMPLATES.map((tpl, i) => <TemplateItem onSelect={() => setTemplateIndex(i)} selected={i === templateIndex} template={tpl} />)}
+            {TEMPLATES.map((tpl, i) => <TemplateItem key={tpl.name} onSelect={() => setTemplateIndex(i)} selected={i === templateIndex} template={tpl} />)}
         </div>
         <p>Selected template: <strong>{TEMPLATES[templateIndex].name}</strong></p>
     </Card>
