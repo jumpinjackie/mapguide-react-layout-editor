@@ -3,7 +3,7 @@ import { Navbar, Tabs, Tab, Alignment } from "@blueprintjs/core";
 import { Editor } from "./editor";
 import { JsonView } from "./json-view";
 
-type TabId = "Editor" | "JsonView" | "Preview";
+type TabId = "Editor" | "JsonView";
 
 export const AppDefEditor = () => {
     const [tabId, setTabId] = React.useState<TabId>("Editor")
@@ -11,7 +11,7 @@ export const AppDefEditor = () => {
         setTabId(tabId);
     };
     return <>
-        <Navbar>
+        <Navbar fixedToTop>
             <Navbar.Group align={Alignment.LEFT}>
                 <Navbar.Heading>AppDef Editor for mapguide-react-layout</Navbar.Heading>
             </Navbar.Group>
@@ -27,7 +27,7 @@ export const AppDefEditor = () => {
                 </Tabs>
             </Navbar.Group>
         </Navbar>
-        <div>
+        <div style={{ marginTop: 50 }}>
             {tabId === "Editor" && <Editor />}
             {tabId === "JsonView" && <JsonView />}
         </div>

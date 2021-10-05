@@ -6,7 +6,12 @@ const INITIAL_STATE: ApplicationDefinition = {
     MapSet: {
         MapGroup: []
     },
-    WidgetSet: []
+    WidgetSet: [
+        {
+            Container: [],
+            Widget: []
+        }
+    ]
 };
 
 export function appDefReducer(state = INITIAL_STATE, action: EditorAction) {
