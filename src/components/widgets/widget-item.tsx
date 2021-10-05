@@ -1,4 +1,5 @@
 import { Card } from "@blueprintjs/core";
+import { strIsNullOrEmpty } from "mapguide-react-layout";
 import { WidgetInfo } from "./widget-sets";
 
 export type WidgetItemProps = {
@@ -7,6 +8,6 @@ export type WidgetItemProps = {
 
 export const WidgetItem: React.FC<WidgetItemProps> = ({ widget }) => {
     return <Card title={widget.Description} style={{ textAlign: "center" }}>
-        <p>{widget.Label}</p>
+        <p>{strIsNullOrEmpty(widget.Label) ? widget.LocalizedType : widget.Label}</p>
     </Card>
 };
